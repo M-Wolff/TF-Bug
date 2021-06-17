@@ -42,6 +42,7 @@ def evaluate_model(model, x, y_true):
 
 
 _Dataset_Path = Path("/scratch/tmp/m_wolf37/Bachelorarbeit/datasets_exps/swedishLeaves3folds5/exps_ts10/")
+#_Dataset_Path = Path("/scratch/tmp/m_wolf37/Bachelorarbeit/datasets_exps/swedishLeaves3folds5/exps/")
 
 net_type = "R" if sys.argv[1].lower() in ["resnet","r"] else "I"
 img_size = 299 if net_type == "I" else 224

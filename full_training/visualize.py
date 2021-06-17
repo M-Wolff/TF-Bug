@@ -11,6 +11,8 @@ def load_history(path):
         history = pickle.load(pickle_file)
     return history
 
+_BASE_PATH = "big_trainset_ts100/"
+#_BASE_PATH = "small_trainset_ts10/"
 
 loss_key_tr = "loss"
 loss_key_te = "val_loss"
@@ -27,10 +29,10 @@ axs2[1][0] = axs1[1][0].twinx()
 axs2[1][1] = axs1[1][1].twinx()
 
 
-resnet_old = load_history("historySave1.13.1_R.dat")
-resnet_new = load_history("historySave2.4.1_R.dat")
-inception_old = load_history("historySave1.13.1_I.dat")
-inception_new = load_history("historySave2.4.1_I.dat")
+resnet_old = load_history(_BASE_PATH + "historySave1.13.1_R.dat")
+resnet_new = load_history(_BASE_PATH + "historySave2.4.1_R.dat")
+inception_old = load_history(_BASE_PATH + "historySave1.13.1_I.dat")
+inception_new = load_history(_BASE_PATH + "historySave2.4.1_I.dat")
 
 for subplot_number, net_type, net_type_str in [(0, resnet_old, "Resnet old"), (1, inception_old, "Inception old"), (2, resnet_new, "Resnet new"), (3, inception_new, "Inception new")]:
     ax1 = axs1[subplot_number // 2][subplot_number % 2]
